@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Connect mustache middleware</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to this repository" href="/commits/master.atom">
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="/connect-mustache-middleware/module/assets/lib/css/monokai.css">
+  <link rel="stylesheet" href="/connect-mustache-middleware/module/assets/css/layout/pages/fear-module.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body class="wrap">
+  <header id="checkout-header" class="header header--checkout" tabindex="-1" role="banner">
+	<div class="header__inner">
+		<a class="logo logo--checkout"><span class="acc__text">Marks and Spencer</span></a>
+		<div class="acc-wrapper">
+			<h2 class="acc__header">Accessibility links</h2>
+			<ul class="acc__links">
+				<li><a class="acc__skip-link" href="#main-content">Skip to main content</a></li>
+				<li><a class="acc__skip-link" href="http://help.marksandspencer.com/support/company-website/terms-and-conditions" target="_blank">Terms &amp; conditions</a></li>
+			</ul>
+		</div>
+        <div class="row">
+            <div class="col" style="text-align: center;">
+                <h1>Connect mustache middleware</h1>
+            </div>
+        </div>
+	</div>
+</header>
+
+  
+  <div class="site-wrapper">
+    <div class="site-wrapper__inner">
+        <div class="content" ng-controller="HubCtrl as hub">
+            <div class="content__inner">
+                <div class="row">
+                    <div class="col" style="margin: 30px 0px">
+                        <div class="col col--span-sm-4 align--center margin-btm">
+    <a href="https://github.com/DigitalInnovation/connect-mustache-middleware" class="btn btn--primary">View on GitHub</a>
+</div>
+
+<div class="col col--span-sm-4 align--center margin-btm">
+    <a href="https://github.com/DigitalInnovation/connect-mustache-middleware/zipball/master" class="btn btn--primary">Download .zip</a>
+</div>
+
+<div class="col col--span-sm-4 align--center margin-btm">
+    <a href="https://github.com/DigitalInnovation/connect-mustache-middleware/tarball/master" class="btn btn--primary">Download .tar.gz</a>
+</div>
+
+                        <p>Connect middleware to compile requested html file as a mustache template before serving the response. Also allow mustache partials to be included using file system.</p>
+
+<h2>Links</h2>
+
+<ul>
+<li><a href="http://digitalinnovation.github.io/connect-mustache-middleware">Website</a></li>
+<li><a href="http://digitalinnovation.github.io/connect-mustache-middleware/docs/">Technical documentation</a></li>
+<li><a href="https://github.com/DigitalInnovation/connect-mustache-middleware/wiki">Wiki</a></li>
+</ul>
+
+<h2>Install</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm install connect-mustache-middleware
+</code></pre></div>
+<h2>Example</h2>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">mustacheEngine</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'connect-mustache-middleware'</span><span class="p">);</span>
+
+<span class="nx">connect</span><span class="p">().</span><span class="nx">use</span><span class="p">(</span>
+    <span class="nx">mustacheEngine</span><span class="p">.</span><span class="nx">middleware</span><span class="p">({</span>
+        <span class="na">rootDir</span><span class="p">:</span> <span class="s1">'application/root/directory'</span><span class="p">,</span>
+        <span class="na">dataDir</span><span class="p">:</span> <span class="s1">'mock/data'</span><span class="p">,</span>
+        <span class="na">templatePathOverides</span> <span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+        <span class="na">datafileExt</span><span class="p">:</span> <span class="s1">'.json'</span><span class="p">,</span>
+        <span class="na">templateExt</span><span class="p">:</span> <span class="s1">'.html'</span><span class="p">,</span>
+        <span class="na">exclude</span><span class="p">:</span> <span class="s1">'path/to/exclude'</span><span class="p">,</span>
+        <span class="na">staticDataTypes</span><span class="p">:</span> <span class="p">{</span>
+            <span class="na">CONFIG</span><span class="p">:</span> <span class="s1">'config'</span>
+        <span class="p">}</span>
+    <span class="p">})</span>
+<span class="p">);</span>
+</code></pre></div>
+<h2>Run unit tests</h2>
+<div class="highlight"><pre><code class="language-bash" data-lang="bash">npm <span class="nb">test</span>
+</code></pre></div>
+<h2>Features</h2>
+
+<ul>
+<li>Works as connect middleware and compile requested HTML file as mustache template.</li>
+<li>Allow mustache partials to be included using file system.
+<br /></li>
+</ul>
+
+<h2><strong>Changelog</strong></h2>
+
+<h4><strong>1.0.1</strong></h4>
+
+<ul>
+<li>added documentation generation</li>
+</ul>
+
+<p><br /></p>
+
+<h2><strong>Contributing</strong></h2>
+
+<p>Here&#39;s the most direct way to get your work merged into the project:</p>
+
+<ul>
+<li>Fork the project.</li>
+<li>Clone down your fork ( <code>git clone git@github.com:[username]/connect-mustache-middleware.git</code> ).</li>
+<li>Create a topic branch to contain your change ( <code>git checkout -b my_awesome_feature</code> ).</li>
+<li>Hack away, add tests. Not necessarily in that order.</li>
+<li>Make sure everything still passes by running <code>npm run test</code>.</li>
+<li>If necessary, rebase your commits into logical chunks, without errors.</li>
+<li>Push the branch up ( <code>git push origin my_awesome_feature</code> ).</li>
+<li>Create a pull request against connect-mustache-middleware/develop and describe what your change
+does and the why you think it should be merged.</li>
+</ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  
+
+</body>
+</html>
